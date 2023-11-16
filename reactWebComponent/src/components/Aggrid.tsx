@@ -2,6 +2,7 @@ import { useState } from "react";
 // import { render } from "react-dom";
 import { AgGridReact } from "ag-grid-react";
 import { ColDef } from "ag-grid-community";
+import { dispatch } from "../api/events";
 
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
@@ -27,6 +28,7 @@ const Aggrid = ({ propDisplay }: { propDisplay: string }) => {
       <div>
         <p>Prop Display Value: {propDisplay}</p>
       </div>
+      <button onClick={() => dispatch("wc-event", {name: "Johnny Appleseed"})}>Test</button>
     </div>
   );
 };
