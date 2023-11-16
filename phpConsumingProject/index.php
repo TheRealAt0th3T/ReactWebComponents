@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP Demo</title>
-    <script src="./assets/test.js"></script>
+    <script src="./assets/props.js"></script>
     <style>
-        <?php include './assets/test.css'; ?>
+        <?php include './assets/props.css'; ?>
     </style>
 </head>
 
@@ -14,7 +14,8 @@
     <?php
     $text = 'This is a PHP project containing a web component';
     echo "$text <br> Below is the web component containing example data";
-    echo "<aggrid-wc></aggrid-wc>";
+    $displayValue = "test prop sent from PHP to React Webcomponent";
+    echo "<aggrid-wc prop-display='$displayValue'></aggrid-wc>";
     ?>
 </body>
 </html>

@@ -14,4 +14,7 @@
 import Aggrid from "./components/Aggrid";
 import r2wc from "@r2wc/react-to-web-component";
 
-customElements.define("aggrid-wc", r2wc(Aggrid));
+customElements.define(
+  "aggrid-wc",
+  r2wc(Aggrid, { props: { propDisplay: "string" } })
+);

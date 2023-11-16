@@ -6,7 +6,7 @@ import { ColDef } from "ag-grid-community";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
 
-const Aggrid = () => {
+const Aggrid = ({ propDisplay }: { propDisplay: string }) => {
   const [rowData] = useState([
     { make: "Toyota", model: "Celica", price: 35000 },
     { make: "Ford", model: "Mondeo", price: 32000 },
@@ -20,8 +20,13 @@ const Aggrid = () => {
   ]);
 
   return (
-    <div className="ag-theme-alpine" style={{ height: 400, width: 600 }}>
-      <AgGridReact rowData={rowData} columnDefs={columnDefs} />
+    <div>
+      <div className="ag-theme-alpine" style={{ height: 400, width: 600 }}>
+        <AgGridReact rowData={rowData} columnDefs={columnDefs} />
+      </div>
+      <div>
+        <p>Prop Display Value: {propDisplay}</p>
+      </div>
     </div>
   );
 };

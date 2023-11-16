@@ -7,7 +7,7 @@ import Aggrid from "./components/Aggrid";
 function App() {
   return (
     <>
-      <Aggrid />
+      <Aggrid propDisplay={""} />
     </>
   );
 }
