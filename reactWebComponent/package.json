@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@ag-grid-community/react": "^30.2.1",
+    "@r2wc/react-to-web-component": "^2.0.3",
     "ag-grid-community": "^30.2.1",
     "ag-grid-react": "^30.2.1",
     "react": "^18.2.0",
