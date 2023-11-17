@@ -37,5 +37,41 @@ Navigate to your main `.php` file and add the following within your `<head>` tag
             <?php include '[path to CSS file]'; ?>
         </style>
 
+To display your webcomponent, add the following within the page's `<body` tags: 
+
+    <?php
+        $[propVariable] = ...;
+        echo "<[webcomponent name][any props]/>";
+    ?>
+
+
+## Creating events 
+
+In React
+create an `events.ts` file and follow the following to create your event: 
+
+    export const dispatch = (eventName: string, detail: object) => {
+        window.dispatchEvent(new CustomEvent (eventName, {detail}));
+    };
+
+In the component, create a use for that event. Here we create a button: 
+    <button onClick={() => dispatch([event name], [props and their values])}></button>
+
+In PHP
+Inside the `<head>` tags, we add the script for the event: 
+    <script>
+        window.addEventListener('wc-event', (event) => {
+            document.getElementById("demo").innerHTML = ""; //clearing
+            const valueString = Object.values(event.detail);
+            console.log("This is the value string: " + valueString);
+            document.getElementById("demo").innerHTML += valueString;
+        });
+    </script>
+
+Then inside the `<body>` tag, we can add an element and assing the same Id as set above:
+    <div id="demo"></div>
+
+Now you have an element in your web component that can retrieve data from your PHP and be able to send data to display. 
+
 ## Additional Notes:
 - the name given to the react component has to be lowercase
